@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: unzip UpgraderApp.zip
+      - run: for f in UpgraderApp*.zip; do unzip -o "$f"; done.
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 17 }
       # - uses: android-actions/setup-android@v3
